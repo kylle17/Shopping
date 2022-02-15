@@ -1,27 +1,29 @@
 package jpashop.jpabook.domain;
 
+import jdk.jfr.Category;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "item")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Getter @Setter
-public class Member {
+public class Item {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "member_id")
+    @Column(name = "item_id")
     private Long id;
 
     private String name;
+    private int price;
+    private int stockQuantity;
 
-    @Embedded
-    private Address address;
 
-    @OneToMany(mappedBy = "member")
-    private List<Order> orders = new ArrayList<>();
+    private List<Category> categories;
+
 
 
 }
