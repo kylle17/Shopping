@@ -1,9 +1,10 @@
 package jpashop.jpabook.domain.item;
 
 import jpashop.jpabook.domain.Item;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.Inheritance;
-
+@Getter @Setter
 public class Book extends Item {
 
     private String author;

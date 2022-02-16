@@ -23,7 +23,7 @@ public class Order {
 
 
     @OneToMany(mappedBy = "order")
-    private List<Item> orderItems = new ArrayList<>();
+    private List<OrderItem> orderItems = new ArrayList<>();
 
 
     @OneToOne

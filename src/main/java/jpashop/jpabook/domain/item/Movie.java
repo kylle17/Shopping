@@ -1,7 +1,10 @@
 package jpashop.jpabook.domain.item;
 
-import javax.persistence.Inheritance;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class Movie {
 
     private String director;
